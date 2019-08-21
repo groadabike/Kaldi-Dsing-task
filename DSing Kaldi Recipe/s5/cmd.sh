@@ -14,6 +14,6 @@ export decode_cmd="run.pl"
 
 
 if [[ "$HOSTNAME" == *"sharc"* ]]; then
-    export train_cmd="queue.pl -V --mem 6G -l h_rt=08:00:00"
-    export decode_cmd="queue.pl -V --mem 8G -l h_rt=08:00:00 -P rse -q rse.q"
+    export train_cmd="queue.pl --mem 6G"
+    export decode_cmd="queue.pl --mem 8G"
 fi

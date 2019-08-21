@@ -5,17 +5,12 @@
 
 # Begin configuration section.
 words=5000
-trainset=
-devset=
-testset=
 # End configuration section
 
 echo "$0 $@"  # Print the command line for logging
 
 if [ -f path.sh ]; then . ./path.sh; fi
 . utils/parse_options.sh || exit 1;
-
-
 
 # The parts of the output of this that will be needed are
 # [in data/local/dict/ ]
@@ -27,9 +22,7 @@ if [ -f path.sh ]; then . ./path.sh; fi
 
 mkdir -p data
 
-for datadir in $devset $testset $trainset; do
-  python local/prepare_data.py data/ $DATA_ROOT conf/${datadir}.json $datadir
-done
+
 
 dir=data/local/dict
 mkdir -p $dir
@@ -144,7 +137,7 @@ echo "<UNK> SPN" >> $dir/lexicon.txt
 
 ## The next section is again just for debug purposes
 ## to show words for which the G2P failed
-rm -f $dir/lexiconp.txt 2>/$devset/null; # can confuse later script if this exists.
+rm -f $dir/lexiconp.txt 2>null; # can confuse later script if this exists.
 awk '{print $1}' $dir/lexicon.txt | \
   perl -e '($word_counts)=@ARGV;
    open(W, "<$word_counts")||die "opening word-counts $word_counts";
