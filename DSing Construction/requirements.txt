@@ -1,0 +1,8 @@
+requests==2.18.4
+pydub==0.23.0
+beautifulsoup4==4.7.1
+user_agent
+num2words
+pyicu
+pycld2
+polyglot
