@@ -1,4 +1,4 @@
-# DSing ASR task.
+# DSing ASR task: Resources and Baseline for unaccompanied singing ASR.
 
 In this repository, you will find the scripts used to construct the DSing ASR-oriented dataset
 and the baseline system constructed on Kaldi.  
