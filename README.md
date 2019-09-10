@@ -1,4 +1,4 @@
-# DSing unaccompanied karaoke corpus.
+# DSing ASR task.
 
 In this repository, you will find the scripts used to construct the DSing ASR-oriented dataset
 and the baseline system constructed on Kaldi.  
