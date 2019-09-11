@@ -33,5 +33,6 @@ The process is based on a series of python tools that are summarise in the runme
 Any other option will rise an error.
 2. Set the variable *DSing_dest* with the path where the DSing version will be saved.
 3. Set the variable *SmuleSing_path* with the path to your copy of Smule Sing!300x30x2.
+4. 
 
  
