@@ -15,36 +15,43 @@ version=
 DSing_dest=/media/gerardo/SoloSinging/${version}
 SmuleSing_path=/media/gerardo/SoloSinging/DAMP/sing_300x30x2
 
-# Prepare the workspace
+# A- Prepare the workspace
 python set_workspace.py --db=${version} $DSing_dest
-# Make a copy of Lyrics from Sing! to DSing
+
+# B- Make a copy of Lyrics from Sing! to DSing
 python copy_lyrics.py $DSing_dest $SmuleSing_path
-# Filter word/syllable prompt-lyrics
+
+# C- Filter word/syllable prompt-lyrics
 python identify_wordlevel_lyrics.py $DSing_dest
-# Download sentence-level prompt-lyrics from Smule
 
-# This step has problem.
-# Smule changes the divs and block scrapping
-#python scraping_lyrics.py  $workspace $db_path
+# D- Download sentence-level prompt-lyrics from Smule
+#
+# I need to change this step.
+# Smule changes the divs and blocks scrapping
+# python scraping_lyrics.py  $workspace $db_path
 
-# Transform word to sentence level
+# E- Transform word to sentence level
 python word_to_sentence_level.py $DSing_dest
 
-# Filter non-English arrengemnts
+# F- Filter non-English arrengemnts
 python select_english_subset.py $DSing_dest
 
-# 
+# G- Transform the prompt-lyrics format to a suitable format for sollowing step
 python reformat_annotation.py $DSing_dest
-# Align prompt-lyrics with non-solences segments
+
+# H- Align prompt-lyrics with non-silences segments
 python realign_annotation.py $DSing_dest $SmuleSing_path
 
+# I- Extract utterances using alignment
 python extract_utterances.py $DSing_dest $SmuleSing_path
 
+# J- Split into train/dev/test sets
 python split_train_dev_test.py $DSing_dest
 
+# K- Compile all the data in a metadata file
 mkdir -p $DSing_dest/kaldi/data
-
 python create_metadata.py $DSing_dest $SmuleSing_path
+
 
 python final_metadata.py $DSing_dest $SmuleSing_path $DSing_dest/metadata.json \
     /media/gerardo/SoloSinging/Construct_DSing/Gold/dev_gold.json \

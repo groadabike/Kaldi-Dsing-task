@@ -21,8 +21,7 @@ This repository provides the scripts to transform **Sing!** to the DSing ASR tas
 ## 2- Initial steps
 
 The first step before running any of the scripts is to obtain access to **Sing!** dataset.
-For more details, go to  [https://ccrma.stanford.edu/damp/](https://ccrma.stanford.edu/damp/).   
-
+For more details, go to [DAMP repository](https://ccrma.stanford.edu/damp/).   
 
 ## 3- Transform Sing! to DSing dataset
 
@@ -33,6 +32,8 @@ The process is based on a series of python tools that are summarise in the runme
 Any other option will rise an error.
 2. Set the variable *DSing_dest* with the path where the DSing version will be saved.
 3. Set the variable *SmuleSing_path* with the path to your copy of Smule Sing!300x30x2.
-4. 
+4. Run code until step **K** 
+5. .....
 
+## 4- Extract DSing dataset using pre-segmented data.
  
