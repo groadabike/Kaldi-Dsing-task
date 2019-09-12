@@ -69,7 +69,7 @@ if [ $stage -le 1 ]; then
         --oov-symbol "<UNK>" --words-file data/lang/words.txt \
         data/ data/srilm
 
-    # Compiles G for DSing trigram LM
+    # Compiles G for DSing Preconstructed trigram LM
     utils/format_lm.sh  data/lang data/srilm/best_3gram.gz data/local/dict/lexicon.txt data/lang_3G
     utils/format_lm.sh  data/lang data/srilm/best_4gram.gz data/local/dict/lexicon.txt data/lang_4G
 fi

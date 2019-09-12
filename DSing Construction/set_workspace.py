@@ -45,7 +45,7 @@ if __name__ == '__main__':
     """
     db_options = ['DSing1', 'DSing3', 'DSing30']
     parser = argparse.ArgumentParser(
-        description='Script creates the DSing directory'
+        description='Script creates the DSing Preconstructed directory'
         )
     parser.add_argument('workspace', type=str,
                         help='Path where the DB will be saves')

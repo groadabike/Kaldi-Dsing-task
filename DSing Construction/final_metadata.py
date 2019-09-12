@@ -218,6 +218,6 @@ if __name__ == '__main__':
 # /media/gerardo/SoloSinging/DAMP/sing_300x30x2
 # /media/gerardo/SoloSinging/DSing1
 # /media/gerardo/SoloSinging/DSing1/metadata.json
-# /media/gerardo/SoloSinging/DSing/Gold/dev_gold.json
-# /media/gerardo/SoloSinging/DSing/Gold/test_gold.json
-# /media/gerardo/SoloSinging/DSing/Clean_DAMP/performances.csv
+# /media/gerardo/SoloSinging/DSing Preconstructed/Gold/dev_gold.json
+# /media/gerardo/SoloSinging/DSing Preconstructed/Gold/test_gold.json
+# /media/gerardo/SoloSinging/DSing Preconstructed/Clean_DAMP/performances.csv

@@ -36,4 +36,8 @@ Any other option will rise an error.
 5. .....
 
 ## 4- Extract DSing dataset using pre-segmented data.
- 
+
+If you want to do some analysis in the segmentation results or to use DSing for different porpoise than ASR.
+In directory **[DSing preconstructed](DSing preconstructed)** you can find a small script that allows to recover the 
+transcriptions and utterance wav files.
+Just need to to set the output directory and the path of your version of **Sing!**   

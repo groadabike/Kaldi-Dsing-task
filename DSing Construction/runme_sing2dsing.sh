@@ -18,7 +18,7 @@ SmuleSing_path=/media/gerardo/SoloSinging/DAMP/sing_300x30x2
 # A- Prepare the workspace
 python set_workspace.py --db=${version} $DSing_dest
 
-# B- Make a copy of Lyrics from Sing! to DSing
+# B- Make a copy of Lyrics from Sing! to DSing Preconstructed
 python copy_lyrics.py $DSing_dest $SmuleSing_path
 
 # C- Filter word/syllable prompt-lyrics
