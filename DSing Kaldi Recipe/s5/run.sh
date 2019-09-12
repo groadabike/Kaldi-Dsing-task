@@ -28,7 +28,7 @@ set -e # exit on error
 
 # Sing! 300x30x2 corpus path
 # please change the path accordingly
-sing_corpus=/export/DAMP300x30x20/sing_300x30x2
+sing_corpus=/fastdata/acp13gr/DAMP300x30x20/sing_300x30x2
 
 
 echo "Using steps and utils from WSJ recipe"
@@ -59,7 +59,7 @@ if [ $stage -le 1 ]; then
     # Selecting the top 25000 words by frequency
     # Is expected that the final size will be larger as
     # it use all the words with the same frequency avoiding an arbitrary cut-off
-    local/prepare_dict.sh --words 25000
+    local/prepare_dict.sh --words 26000
 
     utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang
 
