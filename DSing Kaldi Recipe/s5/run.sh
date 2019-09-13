@@ -200,7 +200,7 @@ if [[ $stage -le 6 ]]; then
     echo "=====  $(date +"%D_%T") ====="
     echo
 
-    local/chain/run_tdnn_1d.sh --nj $nj --decode_nj $decode_nj --stage 15 \
+    local/chain/run_tdnn_1d.sh --nj $nj --decode_nj $decode_nj \
     --train_set ${trainset}_cleaned --test_sets "$devset $testset" \
     --gmm tri3b_cleaned --nnet3-affix _${trainset}_cleaned
 fi
