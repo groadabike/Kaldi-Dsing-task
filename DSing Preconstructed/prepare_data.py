@@ -65,7 +65,16 @@ class DataSet:
         if not exists(join(self.workspace, "audio")):
             makedirs(join(self.workspace, "audio"))
         for s in self.sentences:
-            subprocess.run(s, shell=True)
+            a = subprocess.run(s, capture_output=True, shell=True)
+            warnings = 1
+            if 'WARN' in str(a.stderr):
+                print("WARNING {}".format(warnings))
+                print(s)
+                print(str(a.stderr))
+                print("\n-------\n")
+                warnings += 1
+
+
 
 
 def read_json(filepath):
