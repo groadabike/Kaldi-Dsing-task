@@ -132,3 +132,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     main(args)
+
+# python prepare_data.py /media/gerardo/SoloSinging/savedata /media/gerardo/SoloSinging/DAMP/sing_300x30x2/ train30
