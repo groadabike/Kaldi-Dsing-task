@@ -17,3 +17,8 @@ if [[ "$HOSTNAME" == *"sharc"* ]]; then
     export train_cmd="queue.pl --mem 6G"
     export decode_cmd="queue.pl --mem 8G"
 fi
+if [[ "$HOSTNAME" == *"bessemer"* ]]; then
+    export train_cmd="slurm.pl --mem 6G"
+    export decode_cmd="slurm.pl --mem 8G"
+
+fi

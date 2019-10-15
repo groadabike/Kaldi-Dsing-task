@@ -75,8 +75,6 @@ class DataSet:
                 warnings += 1
 
 
-
-
 def read_json(filepath):
     try:  # Read the json
         with open(filepath) as data_file:
@@ -106,7 +104,7 @@ def main(args):
     db_path = args.db_path
     workspace = args.workspace
     dset = args.dset
-    utts_path = "../DSing Kaldi Recipe/s5/conf/{}.json".format(dset)
+    utts_path = "../DSing Kaldi Recipe/dsing/s5/conf/{}.json".format(dset)
 
     countries = ["GB"]
     countries += ["US", "AU"] if dset in ["train3", "train30"] else []
