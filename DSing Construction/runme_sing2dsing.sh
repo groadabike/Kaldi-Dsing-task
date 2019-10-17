@@ -12,7 +12,7 @@ echo "DSing30 = The English spoken recordings from GB plus all the other English
 
 version=
 
-DSing_dest=/media/gerardo/SoloSinging/${version}
+DSing_dest=/media/gerardo/SoloSinging/DSing_Task/${version}
 SmuleSing_path=/media/gerardo/SoloSinging/DAMP/sing_300x30x2
 
 # A- Prepare the workspace
@@ -25,10 +25,7 @@ python copy_lyrics.py $DSing_dest $SmuleSing_path
 python identify_wordlevel_lyrics.py $DSing_dest
 
 # D- Download sentence-level prompt-lyrics from Smule
-#
-# I need to change this step.
-# Smule changes the divs and blocks scrapping
-# python scraping_lyrics.py  $workspace $db_path
+python scraping_lyrics.py  $DSing_dest
 
 # E- Transform word to sentence level
 python word_to_sentence_level.py $DSing_dest

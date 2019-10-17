@@ -53,7 +53,9 @@ def file2list(filepath):
     outlist = []
     with open(filepath) as file:
         for line in file:
-            outlist.append(line.replace('\n', ''))
+            line = line.replace('\n', '')
+            if line:
+                outlist.append(line)
     return outlist
 
 
@@ -69,16 +71,18 @@ def create_original_json(args):
 
     for country in countries:
         print("[English Subset] Doing word2sentence lyrics of country {}".format(country))
-        arrangement_list = [f for f in listdir(join(workspace, "data", country, country + "DownloadLyric"))
-                            if f.endswith('.txt')]
+        arrangement_list = file2list(join(workspace, "data", country, "word_level.txt"))
+
         for arrangement in arrangement_list:
-            new_text_path = join(workspace, "data", country, country + 'DownloadLyric', arrangement)
-            original_annotation_path = join(workspace, "data", country, country + 'Lyrics', arrangement.split(".")[0] + ".json")
-            reconstructed_annotation = reconstruct_original_lyrics(new_text_path, original_annotation_path)
-            original_reconstructed_lyrics_path = join(workspace, "data", country, country + 'DownloadLyric', arrangement.split(".")[0] + ".json")
-            create_folder(dirname(original_reconstructed_lyrics_path))
-            with open(original_reconstructed_lyrics_path, 'w') as outfile:
-                json.dump(reconstructed_annotation, outfile, indent=4)
+            new_text_path = join(workspace, 'DownloadLyric', arrangement.split(".")[0] + ".txt")
+            if exists(new_text_path):
+                original_annotation_path = join(workspace, "data", country, country + 'Lyrics', arrangement)
+                reconstructed_annotation = reconstruct_original_lyrics(new_text_path, original_annotation_path)
+                original_reconstructed_lyrics_path = join(workspace, "data", country, country + 'DownloadLyric',
+                                                            arrangement.split(".")[0] + ".json")
+                create_folder(dirname(original_reconstructed_lyrics_path))
+                with open(original_reconstructed_lyrics_path, 'w') as outfile:
+                    json.dump(reconstructed_annotation, outfile, indent=4)
 
         one_word_recovered = [f for f in listdir(join(workspace, "data", country, country + 'DownloadLyric'))
                               if f.endswith(".json")]
@@ -94,7 +98,6 @@ def reconstruct_original_lyrics(text_lyrics_path, json_lyrics_path):
     text_lyrics = file2list(text_lyrics_path)
     it_text_lyrics = iter(text_lyrics)
     current_text = next(it_text_lyrics)
-
     reconstruct = []
     element = {'t': 0.0,
                'l': ""}
@@ -104,12 +107,26 @@ def reconstruct_original_lyrics(text_lyrics_path, json_lyrics_path):
         except json.decoder.JSONDecodeError:
             print(data_file)
     for item in data:
-        if item['l'] in current_text:
+        if item['l'] == current_text[:len(item['l'])]:
             if element['t'] == 0:
                 element['t'] = item['t']
                 element['l'] = current_text
             current_text = current_text[len(item['l']):].lstrip()
-        if len(current_text) == 0:
+
+        # if item['l'] == current_text[1:len(item['l'])]:
+        #     if element['t'] == 0:
+        #         element['t'] = item['t']
+        #         element['l'] = current_text
+        #     current_text = current_text[len(item['l'])+1:].lstrip()
+        #
+        # if item['l'][1:] == current_text[:len(item['l'])-1]:
+        #     if element['t'] == 0:
+        #         element['t'] = item['t']
+        #         element['l'] = current_text
+        #     current_text = current_text[len(item['l'])-1:].lstrip()
+
+
+        if len(current_text) == 0 or current_text == ',' or current_text == '.':
             reconstruct.append(element)
             element = {'t': 0.0,
                        'l': ""}
