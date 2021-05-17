@@ -1,7 +1,6 @@
 # DSing ASR task: Resources and Baseline for an unaccompanied singing ASR.
 
-In this repository, you will find the scripts used to construct the DSing ASR-oriented dataset
-and the baseline system constructed on Kaldi.  
+Kaldi recipe for the DSing task baseline.  
 
 Cite:
 ```
@@ -14,9 +13,8 @@ Cite:
 ```
 
 ## 1- DSing dataset
+DSing is a dataset based on the [Smule Sing!300x30x2](https://ccrma.stanford.edu/damp/) dataset (**Sing!**).
 
-DSing is an ASR-oriented dataset constructed from the [Smule Sing!300x30x2](https://ccrma.stanford.edu/damp/) dataset (**Sing!**).
-This repository provides the scripts to transform **Sing!** to the DSing ASR task. 
 
 ## 2- Initial steps
 
@@ -25,7 +23,7 @@ For more details, go to [DAMP repository](https://ccrma.stanford.edu/damp/).
 
 ## 3- Transform Sing! to DSing dataset
 
-The scripts to transform the **Sing!** dataset to DSing ASR task dataset are located in the **[DSing Construction](DSing Construction/)** directory.
+The scripts to transform the **Sing!** dataset to DSing ASR task dataset are located in the **[DSing Construction](../../../../../home/gerardo/Extended/Projects/Construct-Kaldi-Dsing-task/DSing%20Construction/)** directory.
 The process is based on a series of python tools that are summarise in the runme_sing2dsing.sh bash script.
 
 1. Define the variable *version* with the name of the DSing version you want to construct (DSing1, DSing3 or DSing30).
