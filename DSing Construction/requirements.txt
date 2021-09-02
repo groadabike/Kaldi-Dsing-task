@@ -1,0 +1,9 @@
+npyscreen==4.10.5
+requests==2.21.0
+pydub==0.23.1
+polyglot==16.7.4
+docopt==0.6.2
+num2words==0.5.10
+pycld2==0.31
+beautifulsoup4==4.8.0
+user_agent==0.1.9
