@@ -23,21 +23,6 @@ This repository provides the scripts to transform **Sing!** to the DSing ASR tas
 The first step before running any of the scripts is to obtain access to **Sing!** dataset.
 For more details, go to [DAMP repository](https://ccrma.stanford.edu/damp/).   
 
-## 3- Transform Sing! to DSing dataset
+## 3- Extract DSing dataset using pre-segmented data.
 
-The scripts to transform the **Sing!** dataset to DSing ASR task dataset are located in the **[DSing Construction](DSing Construction/)** directory.
-The process is based on a series of python tools that are summarise in the runme_sing2dsing.sh bash script.
-
-1. Define the variable *version* with the name of the DSing version you want to construct (DSing1, DSing3 or DSing30).
-Any other option will rise an error.
-2. Set the variable *DSing_dest* with the path where the DSing version will be saved.
-3. Set the variable *SmuleSing_path* with the path to your copy of Smule Sing!300x30x2.
-4. Run code until step **K** 
-5. .....
-
-## 4- Extract DSing dataset using pre-segmented data.
-
-If you want to do some analysis in the segmentation results or to use DSing for different porpoise than ASR.
-In directory **[DSing preconstructed](DSing preconstructed)** you can find a small script that allows to recover the 
-transcriptions and utterance wav files.
-Just need to to set the output directory and the path of your version of **Sing!**   
+In directory **[DSing preconstructed](DSing preconstructed)** you can find the DSing dataset segmentation.
