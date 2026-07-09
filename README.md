@@ -13,16 +13,7 @@ Cite:
 }
 ```
 
-## 1- DSing dataset
-
-DSing is an ASR-oriented dataset constructed from the [Smule Sing!300x30x2](https://ccrma.stanford.edu/damp/) dataset (**Sing!**).
+DSing is an ASR-oriented dataset constructed from the [Smule DAMP-MVP 300x30x2](https://zenodo.org/records/2747436) dataset (**Sing!**).
 This repository provides the scripts to transform **Sing!** to the DSing ASR task. 
-
-## 2- Initial steps
-
-The first step before running any of the scripts is to obtain access to **Sing!** dataset.
-For more details, go to [DAMP repository](https://ccrma.stanford.edu/damp/).   
-
-## 3- Extract DSing dataset using pre-segmented data.
 
 In directory **[DSing preconstructed](DSing preconstructed)** you can find the DSing dataset segmentation.
