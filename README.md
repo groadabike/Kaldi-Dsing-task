@@ -1,9 +1,18 @@
 # DSing ASR task: Resources and Baseline for an unaccompanied singing ASR.
 
-In this repository, you will find the scripts used to construct the DSing ASR-oriented dataset
-and the baseline system constructed on Kaldi.  
+This is the accompanied repository for our paper `Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System`.
 
-DSing is an ASR-oriented dataset derived from the [Smule DAMP-MVP 300x30x2](https://zenodo.org/records/2747436) dataset.
+It contains the resources and the baseline system for the DSing ASR task.
+
+## What is DSing?
+
+DSing is an unaccompanied singing dataset created to fill a gap in the automatic lyrics transcriptions datasets.
+It is derived from the [Smule DAMP-MVP 300x30x2](https://zenodo.org/records/2747436) dataset, which are thousands of solo-singing karaoke recordings.
+
+## Directories in this repo
+
+- DSing Kaldi Recipe : Directory with a Kaldi recipe for the DSing ASR task.
+- DSing preconstructed : Directory with the DSing dataset segmentation.
 
 ## How to use the data?
 
