@@ -17,7 +17,7 @@ If you use this segmentation, please cite DAMP-MVP 300x30x2 as indicated by Smul
 
 ```
 @inproceedings{Roa_Dabike-Barker_2019,  
-  author = {Roa Dabike, Gerardo and Barker, Jon}  
+  author = {Roa-Dabike, Gerardo and Barker, Jon}  
   title = {{Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System}},  
   year = 2019,  
   booktitle = {Proceedings of the 20th Annual Conference of the International Speech Communication Association (INTERSPEECH 2019)}  
